@@ -1,3 +1,6 @@
+docker run busybox
+docker run -d -p 80:80 docker/getting-started
+
 ## docker build -t getting-started .
 
 ## docker run -dp 3000:3000 getting-started
@@ -17,11 +20,12 @@ docker run -dp 3000:3000 getting-started
 
 
 
- docker volume create todo-db
+docker volume create todo-db
 
 docker run -dp 3000:3000 -v todo-db:/etc/todos getting-started
 
 docker volume inspect
+docker inspect getting-started
 
 
 az group create --name kubernetestutorial --location uksouth
@@ -44,7 +48,7 @@ az aks get-credentials --resource-group kubernetestutorial --name kubernetes-tut
 kubectl get nodes
 
 
-docker login kubernetestutorial.azurecr.io --username kubernetestutorial --password OqQlBe3Ui//fVGVJP5YFAr=7216OlyNf
+docker login kubernetestutorial.azurecr.io --username kubernetestutorial --password N26RZiDoW3hmSW3k3O+IbOwPbpNH9C9M
 docker image tag getting-started kubernetestutorial.azurecr.io/getting-started:0.1
 docker image push kubernetestutorial.azurecr.io/getting-started:0.1
 
